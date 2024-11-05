@@ -1,0 +1,25 @@
+button.SUBSCRIBE {
+    background-color: #b40c06;
+    color: white;
+    border: 1px solid red;
+    border-radius: 2px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+button.JOIN {
+    background-color: white;
+    color: #284994;
+    border: 1.6px solid #284994;
+    border-radius: 2px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#bigbutton {
+    background-color: black;
+    color: white;
+    font-size: 20px;
+}
