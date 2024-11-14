@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Two Column Layout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .column {
+            /* Creates equal-width for all columns */
+            flex: 1;
+            padding: 10px;
+        }
+
+        .column1 {
+            background-color: lightblue;
+        }
+
+        .column2 {
+            /* double size width for this column */
+            flex: 3;
+            background-color: lightgreen;
+        }
+
+        .navbar {
+            background-color: rgb(19, 194, 31);
+            padding: 10px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            margin-bottom: 10px;
+            justify-content: space-between;
+            margin-right: 5px;
+            text-align: right;
+        }
+
+        #nav a {
+            color: white;
+            font-size: 20px;
+            margin-right: 5px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #nav a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background-color: rgb(19, 194, 31);
+            color: white;
+            padding: 10px;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div id="nav">
+            <a href="#">Home</a>
+            <a href="#">Services</a>
+            <a href="#">About</a>
+            <a href="#">Testimonials</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="column column1">
+            <h2>Column 1</h2>
+            <p>This is the first column.</p>
+        </div>
+
+        <div class="column column2">
+            <h2>Column 2</h2>
+            <p>This is the second column.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="column column2">
+            <h2>Column 1</h2>
+            <p>This is the first column.</p>
+        </div>
+
+        <div class="column column1">
+            <h2>Column 2</h2>
+            <p>This is the second column.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Footer</p>
+    </div>
+</body>
+
+</html>
