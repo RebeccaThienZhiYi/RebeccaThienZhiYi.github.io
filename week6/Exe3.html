@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Week 6-Exercise 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .text-content button {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            font-size: 16px;
+            background-color: #c2b9b3;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .text-content button:hover {
+            background-color: #908076;
+        }
+
+
+        .container {
+            display: flex;
+            align-items: center;
+        }
+
+        .text-content {
+            flex: 1;
+            margin-left: 37px;
+            margin-right: 37px;
+            max-width: 50%;
+            padding-right: 20px;
+        }
+
+        .text-content h1 {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .text-content p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .img {
+            flex: 1;
+            max-width: 100%;
+            text-align: center;
+        }
+
+        .img img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: left;
+            }
+
+            .img {
+                order: -1;
+                max-width: 100%;
+            }
+
+            .text-content {
+                max-width: 100%;
+                padding: 10px;
+            }
+
+            .text-content {
+                padding-top: 0;
+            }
+
+            .img img {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text-content">
+            <h1>Elevate your style, embrace timeless elegance.</h1>
+
+            <p>Discover a world of exquisite craftsmanship and unparalleled beauty with our stunning collection of fine
+                jewelry.
+                Each piece is meticulously designed to capture the essence of grace and sophistication, reflecting your
+                unique
+                sense of style.</p>
+
+            <button>view catalog</button>
+        </div>
+
+        <div class="img">
+            <img src="images/lady (1).jpg" alt="Lady">
+        </div>
+    </div>
+</body>
+
+</html>

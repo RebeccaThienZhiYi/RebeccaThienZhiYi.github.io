@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Exercise 4 - Responsive Banner</title>
+    <meta name="viewport" content=" width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            color: white;
+        }
+
+        header {
+            display: flex;
+            color: white;
+            background: url('images/roofers.jpg') no-repeat center center;
+            background-size: contain;
+            background-position: center top;
+            position: relative;
+            height: 100%;
+            align-items: flex-start;
+            justify-content: flex-start;
+            font-family: quan system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: saturate(100%) blur(5px);
+            text-align: center;
+            padding: 25px;
+            max-width: 400px;
+            margin-left: 100px;
+            margin-top: 100px;
+            border-radius: 10px;
+            z-index: 1;
+        }
+
+        .logo {
+            background-color: white;
+            padding: 15px;
+            position: absolute;
+            top: 65px;
+            left: 280px;
+            width: auto;
+            height: auto;
+            z-index: 2;
+        }
+
+        .title {
+            font-size: 28px;
+        }
+
+        .content {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .button {
+            margin-top: 20px;
+            padding: 15px;
+            padding-left: 25px;
+            padding-right: 25px;
+            border-radius: 5px;
+            background-color: white;
+            border: none;
+            font-weight: 1000;
+        }
+
+        .button:hover {
+            background-color: #9f9996;
+        }
+
+        @media screen and (max-width: 600px) {
+            header {
+                background-size: cover;
+                align-items: center;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .title {
+                font-size: 25px;
+            }
+
+            .content {
+                font-size: 15px;
+            }
+
+            .button {
+                font-size: 16px;
+                padding: 15px;
+            }
+
+            .logo {
+                top: 33%;
+                max-width: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!--logo-->
+        <div class="logo">
+            <img src="images/logo.png" alt="logo" height="30">
+        </div>
+        <!--content-->
+        <div class="container">
+            <h1 class="title"> Build Your Dream Home with Solid Structures Builders!
+            </h1>
+            <div class="content">Looking for a reliable and experienced building company to bring your vision to
+                life?<b>Solid Structures Builders</b>is here to make your dream home a reality.
+            </div>
+            <button class="button"> LEARN MORE </button>
+
+        </div>
+    </header>
+</body>
+
+</html>
