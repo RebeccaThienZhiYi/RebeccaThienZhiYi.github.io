@@ -16,6 +16,14 @@
         href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tangerine:wght@400;700&display=swap"
         rel="stylesheet">
     <style>
+        @media screen and (max-width: 600px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+        }
+
         header {
             display: flex;
             background-color: #7AB2D3;
@@ -101,6 +109,7 @@
         }
 
         .column4 {
+            flex: 2;
             background-color: #CBDCEB;
             border-radius: 20px;
             padding: 5px 10px;
@@ -213,6 +222,7 @@
             </div>
 
         </div>
+
         <div class="column">
             <div class="space">
                 <img src="images/check-mark.png" alt="calender" height="20">
@@ -229,6 +239,7 @@
                 </a>
             </div>
         </div>
+
         <div class=" column">
             <div class="space">
                 <img src="images/check-mark.png" alt="calender" height="20">
@@ -250,24 +261,57 @@
     <br /><br />
 
     <!--column 2-->
-    <div class="column4">
-        <div class="space">
-            <img src="images/check-mark.png" alt="calender" height="20">
-            <h2> Week 5</h2>
+    <div class="container">
+        <div class="column4">
+            <div class="space">
+                <img src="images/check-mark.png" alt="calender" height="20">
+                <h2> Week 5</h2>
+            </div>
+            <hr class="line"> <!-- Adds a horizontal line here -->
+            <div class="a">
+
+                <a href="http://127.0.0.1:5500/week5/Exe1.html" target="_blank">
+                    <p>Exercise 1</p>
+
+                </a>
+                <a href="http://127.0.0.1:5500/week5/Exe2.html" target="_blank">
+                    <p>Exercise 2</p>
+                </a>
+
+                <a href="http://127.0.0.1:5500/week5/Exe3.html" target="_blank">
+                    <p>Exercise 3</p>
+                </a>
+            </div>
+
         </div>
-        <hr class="line"> <!-- Adds a horizontal line here -->
-        <div class="a">
 
-            <a href="http://127.0.0.1:5500/week5/Exe1.html" target="_blank">
-                <p>Exercise 1</p>
+        <div class="column4">
+            <div class="space">
+                <img src="images/check-mark.png" alt="calender" height="20">
+                <h2> Week 6</h2>
+            </div>
+            <hr class="line"> <!-- Adds a horizontal line here -->
+            <div class="a">
 
-            </a>
-            <a href="http://127.0.0.1:5500/week5/Exe2.html" target="_blank">
+                <a href="http://127.0.0.1:5500/week6/Exe1.html" target="_blank">
+                    <p>Exercise 1</p>
 
-                <p>Exercise 2</p>
-            </a>
+                </a>
+
+                <a href="http://127.0.0.1:5500/week6/Exe2.html" target="_blank">
+                    <p>Exercise 2</p>
+                </a>
+
+                <a href="http://127.0.0.1:5500/week6/Exe3.html" target="_blank">
+                    <p>Exercise 3</p>
+                </a>
+
+                <a href="http://127.0.0.1:5500/week6/Exe4.html" target="_blank">
+                    <p>Exercise 4</p>
+                </a>
+            </div>
+
         </div>
-
     </div>
 
     <br /><br />
