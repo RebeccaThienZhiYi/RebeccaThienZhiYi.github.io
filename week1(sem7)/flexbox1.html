@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exercise 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Oxygen:wght@300;400;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f6f5ef;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .top {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .top h6 {
+            font-family: Archivo, sans-serif;
+            font-size: 15px;
+            letter-spacing: 1px;
+            margin-bottom: 0;
+        }
+
+        .top h1 {
+            font-family: Archivo, sans-serif;
+            font-size: 50px;
+        }
+
+        .top p {
+            font-family: Oxygen, sans-serif;
+        }
+
+        .column {
+            display: flex;
+            justify-content: center;
+            gap: 26px;
+            margin: 3%;
+        }
+
+        .smallcol {
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 20px 0;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            width: 100%;
+            max-width: 410px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .smallcol p {
+            width: 80%;
+            text-align: left;
+            font-size: 15px;
+            font-family: Oxygen, sans-serif;
+            margin: 10px 0;
+        }
+
+        .smallcol h1 {
+            text-align: left;
+            width: 80%;
+            font-family: Oxygen, sans-serif;
+            font-size: 28px;
+            margin: 15px 0 10px 0;
+        }
+
+        .img-container {
+            width: 90%;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .imgs {
+            width: 100%;
+            height: auto;
+            transition: transform 0.4s ease;
+            display: block;
+        }
+
+        .smallcol:hover .imgs {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 1200px) {
+            .column {
+                justify-content: center;
+            }
+
+            .smallcol {
+                width: 65%;
+                max-width: none;
+            }
+
+            .smallcol h1 {
+                font-size: 22px;
+            }
+
+            .smallcol p {
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .top h1 {
+                font-size: 35px;
+            }
+
+            .column {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .smallcol {
+                width: 100%;
+                max-width: 400px;
+                padding: 15px 0;
+            }
+
+            .smallcol h1 {
+                font-size: 26px;
+            }
+
+            .smallcol p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <h6>Building a better future</h6>
+        <h1>We construct & deliver quality projects</h1>
+        <p>Meet our customers and explore their success stories with us</p>
+    </div>
+
+    <div class="column">
+        <div class="smallcol">
+            <div class="img-container">
+                <img class="imgs" src="imgs/image1.png" alt="img1">
+            </div>
+            <h1>Residential projects</h1>
+            <p>We build sustainable and modern homes for comfortable living.</p>
+        </div>
+
+        <div class="smallcol">
+            <div class="img-container">
+                <img class="imgs" src="imgs/image2.png" alt="img2">
+            </div>
+            <h1>Commersial spaces</h1>
+            <p>We create efficient, inspiring workspaces for businesses of all sizes.</p>
+        </div>
+
+        <div class="smallcol">
+            <div class="img-container">
+                <img class="imgs" src="imgs/image3.png" alt="img3">
+            </div>
+            <h1>Infrustructure works</h1>
+            <p>We develop strong, reliable infrustructure for growing communities.</p>
+        </div>
+    </div>
+</body>
+
+</html>

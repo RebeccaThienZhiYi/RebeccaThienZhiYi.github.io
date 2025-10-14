@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exercise 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f6f5ef;
+            margin: 0;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: Archivo, sans-serif;
+            font-size: 15px;
+            background-color: white;
+            padding: 10px 15px;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: black;
+            margin: 0 15px;
+        }
+
+        .menu a:hover {
+            color: #f9612b;
+        }
+
+        .menu a:nth-child(2) {
+            color: #f9612b;
+        }
+
+        .calling {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .calling a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        .button a {
+            text-decoration: none;
+            color: white;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .button {
+            background-color: #f9612b;
+            border-radius: 8px;
+            border: none;
+            padding: 13.5px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .sidebar-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 280px;
+            height: 100vh;
+            background-color: #222222;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease;
+            z-index: 1000;
+            padding: 80px 30px 30px;
+            font-family: Archivo, sans-serif;
+            transform: translateX(100%);
+        }
+
+        .sidebar-menu.active {
+            transform: translateX(0);
+        }
+
+        .sidebar-menu a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 15px 0;
+        }
+
+        .sidebar-menu a:hover {
+            color: #f9612b;
+        }
+
+        .sidebar-menu a:nth-child(3) {
+            color: #f9612b;
+        }
+
+        .sidebar-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .close-btn img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .hamburger {
+            display: none;
+            background-color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        @media (max-width: 1200px) {
+            .button {
+                display: none;
+            }
+
+            .menu {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .calling {
+                display: none;
+            }
+
+            .sidebar-menu {
+                width: 91%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="https://construction.elementra.themerex.net/"><img src="imgs/logo.png" alt="ELEMENTRA"
+                    width="190"></a>
+        </div>
+
+        <div class="menu">
+            <a href="https://construction.elementra.themerex.net/">Home</a>
+            <a href="https://construction.elementra.themerex.net/services/">Services</a>
+            <a href="https://construction.elementra.themerex.net/work/">Work</a>
+            <a href="https://construction.elementra.themerex.net/project-details/">Project Details</a>
+            <a href="https://construction.elementra.themerex.net/contact/">Contact</a>
+        </div>
+
+        <div class="header-right">
+            <div class="calling">
+                <img src="imgs/calling.png" alt="tel:5551234567" width="20">
+                <a href="#">555-123-4567</a>
+            </div>
+
+            <button class="button"><a href="https://construction.elementra.themerex.net/contact/">Contact</a></button>
+
+            <button class="hamburger" id="hamburgerMenu">
+                <img src="imgs/hamburger.png" alt="Menu" width="20px">
+            </button>
+        </div>
+    </header>
+
+    <div class="sidebar-menu" id="sidebarMenu">
+        <button class="close-btn" id="closeMenu">
+            <img src="imgs/close.png" alt="Close" width="20px">
+        </button>
+
+        <a href="https://construction.elementra.themerex.net/">Home</a>
+        <a href="https://construction.elementra.themerex.net/services/">Services</a>
+        <a href="https://construction.elementra.themerex.net/work/">Work</a>
+        <a href="https://construction.elementra.themerex.net/project-details/">Project Details</a>
+        <a href="https://construction.elementra.themerex.net/contact/">Contact</a>
+    </div>
+
+    <script>
+        const hamburger = document.getElementById('hamburgerMenu');
+        const sidebar = document.getElementById('sidebarMenu');
+        const closeBtn = document.getElementById('closeMenu');
+
+        hamburger.addEventListener('click', function () {
+            sidebar.classList.add('active');
+        });
+
+        closeBtn.addEventListener('click', function () {
+            sidebar.classList.remove('active');
+        });
+    </script>
+</body>
+
+</html>
