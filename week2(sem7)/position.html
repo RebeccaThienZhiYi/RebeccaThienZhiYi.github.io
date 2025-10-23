@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exercise 1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: Archivo, sans-serif;
+            font-size: 15px;
+            background-color: white;
+            padding: 10px 15px;
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: black;
+            margin: 0 15px;
+        }
+
+        .menu a:hover {
+            color: #f9612b;
+        }
+
+        .menu a:nth-child(2) {
+            color: #f9612b;
+        }
+
+        .calling {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .calling a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        .button a {
+            text-decoration: none;
+            color: white;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .button {
+            background-color: #f9612b;
+            border-radius: 8px;
+            border: none;
+            padding: 13.5px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .sidebar-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 280px;
+            height: 100vh;
+            background-color: #222222;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease;
+            z-index: 1000;
+            padding: 80px 30px 30px;
+            font-family: Archivo, sans-serif;
+            transform: translateX(100%);
+        }
+
+        .sidebar-menu.active {
+            transform: translateX(0);
+        }
+
+        .sidebar-menu a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 15px 0;
+        }
+
+        .sidebar-menu a:hover {
+            color: #f9612b;
+        }
+
+        .sidebar-menu a:nth-child(3) {
+            color: #f9612b;
+        }
+
+        .sidebar-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .close-btn img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .hamburger {
+            display: none;
+            background-color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hero {
+            display: flex;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .bgimg {
+            background-image: url(imgs/bgimg.jpg);
+            background-size: cover;
+            height: 100vh;
+            border-radius: 16px;
+            width: 100%;
+            position: relative;
+            justify-content: left;
+            margin-left: 3px;
+            margin-right: 3px;
+        }
+
+        .title {
+            position: absolute;
+            top: 90px;
+            left: 50px;
+            color: white;
+            font-family: "Archivo", sans-serif;
+        }
+
+        .title h1 {
+            font-size: 100px;
+            font-weight: 200px;
+            letter-spacing: -6px;
+            line-height: 0.9;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .title p {
+            font-size: 18px;
+            letter-spacing: 0.9px;
+            line-height: 1.6;
+            margin-top: 0px;
+            font-weight: 20px;
+            font-family: "Archivo", sans-serif;
+        }
+
+        .btn-yellow {
+            background-color: hsl(48, 100%, 69%);
+            color: black;
+            padding: 16px 38px 16px 38px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-size: 16px;
+            border-style: solid;
+            border-width: 2px;
+            border-color: hsl(48, 100%, 69%);
+        }
+
+        .btn-yellow:hover {
+            background-color: hsl(48, 81%, 65%);
+            border-color: hsl(48, 80%, 65%);
+            transition: all .3s;
+        }
+
+        .buttons {
+            margin-top: 45px;
+        }
+
+        .btn-outline {
+            padding: 16px 38px 16px 38px;
+            border-radius: 7px;
+            color: white;
+            border-color: white;
+            text-decoration: none;
+            border-style: solid;
+            border-width: 2px;
+            font-size: 16px;
+            margin-left: 20px;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: black;
+            transition: all .3s;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            max-width: 500px;
+            position: absolute;
+            bottom: 5px;
+            right: 40px;
+            justify-content: flex-end;
+        }
+
+        .box1 {
+            background-color: white;
+            font-family: "Archivo", sans-serif;
+            border-radius: 16px 16px 16px 16px;
+            padding: 25px 30px 30px 30px;
+            flex: 1 1 calc(50% - 10px);
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .box1 h1 {
+            font-size: 50px;
+            color: #F9612B;
+            margin-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .box1 h6 {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        @media (max-width: 1200px) {
+            .button {
+                display: none;
+            }
+
+            .menu {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .calling {
+                display: none;
+            }
+
+            .sidebar-menu {
+                width: 91%;
+            }
+
+            .bgimg {
+                height: 130vh;
+            }
+
+            .container {
+                flex-direction: column;
+                position: static;
+                margin-top: 340px;
+                margin-left: 50px;
+                margin-right: 50px;
+            }
+
+            .title h1 {
+                font-size: 40px;
+                letter-spacing: -2px;
+            }
+
+            .title p {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="https://construction.elementra.themerex.net/"><img src="imgs/logo.png" alt="ELEMENTRA"
+                    width="190"></a>
+        </div>
+
+        <div class="menu">
+            <a href="https://construction.elementra.themerex.net/">Home</a>
+            <a href="https://construction.elementra.themerex.net/services/">Services</a>
+            <a href="https://construction.elementra.themerex.net/work/">Work</a>
+            <a href="https://construction.elementra.themerex.net/project-details/">Project Details</a>
+            <a href="https://construction.elementra.themerex.net/contact/">Contact</a>
+        </div>
+
+        <div class="header-right">
+            <div class="calling">
+                <img src="imgs/calling.png" alt="tel:5551234567" width="20">
+                <a href="#">555-123-4567</a>
+            </div>
+
+            <button class="button"><a href="https://construction.elementra.themerex.net/contact/">Contact</a></button>
+
+            <button class="hamburger" id="hamburgerMenu">
+                <img src="imgs/hamburger.png" alt="Menu" width="20px">
+            </button>
+        </div>
+    </header>
+
+    <div class="sidebar-menu" id="sidebarMenu">
+        <button class="close-btn" id="closeMenu">
+            <img src="imgs/close.png" alt="Close" width="20px">
+        </button>
+
+        <a href="https://construction.elementra.themerex.net/">Home</a>
+        <a href="https://construction.elementra.themerex.net/services/">Services</a>
+        <a href="https://construction.elementra.themerex.net/work/">Work</a>
+        <a href="https://construction.elementra.themerex.net/project-details/">Project Details</a>
+        <a href="https://construction.elementra.themerex.net/contact/">Contact</a>
+    </div>
+
+    <script>
+        const hamburger = document.getElementById('hamburgerMenu');
+        const sidebar = document.getElementById('sidebarMenu');
+        const closeBtn = document.getElementById('closeMenu');
+
+        hamburger.addEventListener('click', function () {
+            sidebar.classList.add('active');
+        });
+
+        closeBtn.addEventListener('click', function () {
+            sidebar.classList.remove('active');
+        });
+    </script>
+
+    <div class="hero">
+        <div class="bgimg">
+            <div class="title">
+                <h1>Modern</h1>
+                <h1>Foundations</h1>
+                <p>Your trusted partner for cutting-edge foundation construction.<br>
+                    We deliver robust and reliable solutions tailored to your project’s needs.</p>
+                <div class="buttons">
+                    <a href="#" class="btn-yellow">Quote Request</a>
+                    <a href="#" class="btn-outline">Our Portfolio</a>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="box1">
+                    <h1>50+</h1>
+                    <h6>Multi-Story Projects</h6>
+                </div>
+
+                <div class="box1">
+                    <h1>174</h1>
+                    <h6>Multi-Story Projects</h6>
+                </div>
+
+                <div class="box1">
+                    <h1>21</h1>
+                    <h6>Multi-Story Projects</h6>
+                </div>
+
+                <div class="box1">
+                    <h1>360+</h1>
+                    <h6>Multi-Story Projects</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
